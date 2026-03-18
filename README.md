@@ -4,7 +4,7 @@
 
 **Live Preview:** [https://number-words.onrender.com](https://number-words.onrender.com)
 
-**GitHub Repo:** [https://github.com/nishchup489-afk/number_to_words](https://github.com/nishchup489-afk/number_to_words)
+**GitHub Repo:** [(https://github.com/nishchup489-afk/number_naming)](https://github.com/nishchup489-afk/number_naming)
 
 **CLI Version:** `sample.py`
 
