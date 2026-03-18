@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>n15 // Number Names</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300;700&display=swap');
+        
+        body {
+            font-family: 'Space Grotesk', sans-serif;
+            background-color: #f0f0f0;
+        }
+
+        .brutal-shadow {
+            box-shadow: 8px 8px 0px 0px rgba(0,0,0,1);
+        }
+
+        .brutal-shadow-sm {
+            box-shadow: 4px 4px 0px 0px rgba(0,0,0,1);
+        }
+
+        input:focus {
+            outline: none;
+            transform: translate(-2px, -2px);
+            box-shadow: 10px 10px 0px 0px rgba(0,0,0,1);
+        }
+    </style>
+</head>
+<body class="min-h-screen p-6 md:p-12 flex flex-col items-center justify-center">
+
+    <main class="w-full max-w-4xl">
+        <header class="mb-12 border-b-4 border-black pb-4 flex justify-between items-end">
+            <div>
+                <h1 class="text-6xl md:text-8xl font-bold uppercase tracking-tighter">Num.Names</h1>
+                <p class="text-xl font-light uppercase tracking-widest">Project 15 / 100 — Python Enterprise</p>
+            </div>
+            <div class="hidden md:block text-right">
+                <span class="bg-black text-white px-4 py-1 text-sm font-bold">STABLE V.3.14</span>
+            </div>
+        </header>
+
+        <section class="grid grid-cols-1 md:grid-cols-12 gap-8">
+            <div class="md:col-span-5">
+                <form action="/convert" method="post" class="flex flex-col gap-6">
+                    <div class="flex flex-col gap-2">
+                        <label for="number" class="uppercase font-bold text-sm tracking-widest">Input Integer</label>
+                        <input 
+                            type="text" 
+                            name="number" 
+                            id="number"
+                            placeholder="e.g. 1234567"
+                            value="{{ input if input }}"
+                            class="bg-white border-4 border-black p-4 text-2xl font-bold brutal-shadow transition-all"
+                            required
+                        >
+                    </div>
+                    
+                    <button type="submit" class="bg-[#FF3E00] text-white border-4 border-black p-4 text-xl font-bold brutal-shadow hover:translate-y-1 hover:translate-x-1 hover:shadow-none transition-all cursor-pointer uppercase">
+                        Generate Nomenclature
+                    </button>
+                </form>
+            </div>
+
+            <div class="md:col-span-7">
+                <div class="bg-white border-4 border-black p-8 min-h-[300px] flex flex-col justify-between brutal-shadow">
+                    <div>
+                        <h2 class="uppercase font-bold text-sm tracking-widest mb-4 opacity-50 text-black">Conversion Output</h2>
+                        {% if result %}
+                            <p class="text-3xl md:text-4xl font-bold leading-tight break-words">
+                                {{ result }}
+                            </p>
+                        {% else %}
+                            <p class="text-3xl font-bold text-gray-300 italic">Waiting for input...</p>
+                        {% endif %}
+                    </div>
+                    
+                    <div class="mt-8 pt-4 border-t-2 border-black flex justify-between items-center text-xs font-bold uppercase tracking-tighter">
+                        <span>Status: Operational</span>
+                        <span>Format: English (Short Scale)</span>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <footer class="mt-20 flex flex-wrap gap-4">
+            <div class="border-2 border-black px-3 py-1 bg-white brutal-shadow-sm font-bold text-xs uppercase">Python 3.14</div>
+            <div class="border-2 border-black px-3 py-1 bg-white brutal-shadow-sm font-bold text-xs uppercase">FastAPI</div>
+            <div class="border-2 border-black px-3 py-1 bg-white brutal-shadow-sm font-bold text-xs uppercase">Tailwind v4</div>
+            <div class="border-2 border-black px-3 py-1 bg-white brutal-shadow-sm font-bold text-xs uppercase">CivicFlow Engine</div>
+        </footer>
+    </main>
+
+</body>
+</html>
